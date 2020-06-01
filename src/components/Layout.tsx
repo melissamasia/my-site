@@ -1,41 +1,34 @@
 import React from "react"
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from "gatsby"
-import { Header } from "./Header"
-import { Site } from '../types';
+import { ConnectLinks } from './ConnectLinks';
+import { Nav } from './Nav';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const data: Site = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-        <SiteBody>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </SiteBody>
+      <Nav/>
+      <SiteBody>{children}</SiteBody>
+      <ConnectLinks/>
+      <StyledFooter>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </StyledFooter>
     </>
   )
 }
 
-const SiteBody = styled.div`
-  margin: 0 auto,
-  maxWidth: 960,
-  padding: 0 1.0875rem 1.45rem,
+const SiteBody = styled.main`
+  margin: 0 1.5em;
+  maxWidth: 960;
+  padding: 0 1.0875rem 1.45rem;
+`;
+
+
+const StyledFooter = styled.footer`
+  margin-left: 1.5em;
 `;

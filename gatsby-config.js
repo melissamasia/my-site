@@ -31,12 +31,10 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-plugin-typography`,
       options: {
-        rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     }
   ],
 }

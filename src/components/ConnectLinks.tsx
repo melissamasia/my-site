@@ -38,11 +38,10 @@ export const ConnectLinks: React.FC = () => {
 };
 
 const LinkContainer = styled.div`
-    position: fixed;
     padding: 25px 0px;
-    bottom: 0px;
     background-color: white;
     & > a:not(:last-of-type) {
         margin-right: 20px;
     }
+    margin-left: 1.5em;
 `;
