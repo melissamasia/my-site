@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -15,5 +16,12 @@ export const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <StyledImage fluid={data.placeholderImage.childImageSharp.fluid} />
 };
+
+const StyledImage = styled(Img)`
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+`;

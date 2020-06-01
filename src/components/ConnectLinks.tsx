@@ -44,4 +44,7 @@ const LinkContainer = styled.div`
         margin-right: 20px;
     }
     margin-left: 1.5em;
+    @media only screen and (max-width: 375px) {
+        margin-left: 1em;
+    }
 `;

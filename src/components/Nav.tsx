@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { InternalLink } from './InternalLink';
+import { Link } from 'gatsby';
 
 export const Nav: React.FC = () => {
     return (
         <NavBar>
-            <SiteTitle>Melissa Masia</SiteTitle>
+            <SiteTitleLink to="/">MELISSA MASIA</SiteTitleLink>
             <LinkContainer>
-                <InternalLink linkText="Home" pageName="/" />
                 <InternalLink linkText="About" pageName="/about" />
-                <InternalLink linkText="Work" pageName="/work" />
+                <InternalLink linkText="More" pageName="/content" />
             </LinkContainer>
         </NavBar>
     );
@@ -27,6 +27,13 @@ const LinkContainer = styled.div`
     }
 `;
 
-const SiteTitle = styled.h1`
+const SiteTitleLink = styled(Link)`
     margin: 0px 1em;
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+    @media only screen and (max-width: 375px) {
+        width: 120px;
+        margin-right: 10px;
+    }
 `;

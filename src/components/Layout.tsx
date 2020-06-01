@@ -24,11 +24,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 const SiteBody = styled.main`
   margin: 0 1.5em;
-  maxWidth: 960;
-  padding: 0 1.0875rem 1.45rem;
+  max-width: 1000px;
+  max-height: 700px;
 `;
 
 
 const StyledFooter = styled.footer`
   margin-left: 1.5em;
+  @media only screen and (max-width: 375px) {
+    margin-left: 1em;
+  }
 `;
+
