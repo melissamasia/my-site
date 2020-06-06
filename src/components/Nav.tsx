@@ -32,7 +32,7 @@ const SiteTitleLink = styled(Link)`
     font-weight: bold;
     color: black;
     font-size: 24px;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 415px) {
         width: 120px;
         margin-right: 10px;
     }

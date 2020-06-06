@@ -29,7 +29,7 @@ const ContentPage = () => (
   );
 
 const ContentContainer = styled.div`
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 415px) {
   }
 `;
 

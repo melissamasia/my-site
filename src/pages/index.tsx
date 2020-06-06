@@ -22,13 +22,10 @@ const IndexPage = () => (
 
 const HomeContainer = styled.div`
   max-width: 1000px;
-  @media only screen and (max-width: 375px) {
-    width: 300px;
-  }
 `;
 
 const Title = styled.h1`
-  margin-top: 100px !important;
+  margin-top: 80px !important;
   font-weight: 400;
   font-size: 48px;
 `;
@@ -38,8 +35,8 @@ const Subtitle = styled.h3`
   font-weight: normal;
   font-size: 30px;
   width: 900px;
-  @media only screen and (max-width: 375px) {
-    width: 250px;
+  @media only screen and (max-width: 415px) {
+    max-width: 300px;
   }
 `;
 
