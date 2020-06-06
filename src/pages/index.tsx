@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
 import { Layout } from "../components/Layout";
-import SEO from "../components/seo"
+import { SEO } from "../components/SEO"
 
 
 const IndexPage = () => (
