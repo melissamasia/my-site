@@ -2,7 +2,8 @@ import React from "react";
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
 import { Layout } from "../components/Layout";
-import { SEO } from "../components/SEO"
+import { SEO } from "../components/SEO";
+import { ConnectLinks } from '../components/ConnectLinks';
 
 
 const IndexPage = () => (
@@ -14,21 +15,20 @@ const IndexPage = () => (
         I'm a full stack software engineer currently based in NYC.
         Right now, I'm on the Provider team @ <ZocdocLink href="https://www.zocdoc.com/">Zocdoc</ZocdocLink>.
       </Subtitle>
+      <ConnectLinks/>
     </HomeContainer>
   </Layout>
 );
 
 const HomeContainer = styled.div`
   max-width: 1000px;
-  height: 800px;
   @media only screen and (max-width: 375px) {
-    height: 500px;
     width: 300px;
   }
 `;
 
 const Title = styled.h1`
-  margin-top: 55px !important;
+  margin-top: 100px !important;
   font-weight: 400;
   font-size: 48px;
 `;

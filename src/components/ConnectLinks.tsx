@@ -10,15 +10,15 @@ type ConnectLink = {
 export const ConnectLinks: React.FC = () => {
     const connectLinks: ConnectLink[] = [
         {
-            name: 'Email',
+            name: 'email',
             href: 'mailto:melissamasia@gmail.com',
         },
         {
-            name: 'LinkedIn',
+            name: 'linkedIn',
             href: 'https://www.linkedin.com/in/melissa-masia/',
         },
         {
-            name: 'Github',
+            name: 'github',
             href: 'https://github.com/melissamasia',
         },
     ];
@@ -38,13 +38,8 @@ export const ConnectLinks: React.FC = () => {
 };
 
 const LinkContainer = styled.div`
-    padding: 25px 0px;
     background-color: white;
     & > a:not(:last-of-type) {
         margin-right: 20px;
-    }
-    margin-left: 1.5em;
-    @media only screen and (max-width: 375px) {
-        margin-left: 1em;
     }
 `;

@@ -22,8 +22,7 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
 
 const StyledButton = styled.a`
     font-size: 24px;
-    text-transform: uppercase;
-    color: ${colors.pickledBluewood};
+    color: ${colors.oracle};
     letter-spacing: 0;
     :hover {
         border-top: 1px solid ${colors.charm};
