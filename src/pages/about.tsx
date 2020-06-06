@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { Image } from '../components/image';
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
+import { ConnectLinks } from '../components/ConnectLinks';
 
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <AboutContainer>
       <Image/>
-        <AboutMeBlurb>
+      <AboutMeBlurb>
         <AboutMeTitle>About Me</AboutMeTitle>
         <AboutMeText>
           Since graduating from Vanderbilt University's School of Engineering in May of 2019, I've 
@@ -18,14 +19,14 @@ const AboutPage = () => (
           I'm particularly passionate about applications of technology for social good and am a strong advocate for women in technology.
           In my free time, you can find me exploring NYC, planning my next trip, doing yoga, or sipping bubble tea. 
         </AboutMeText>
-    </AboutMeBlurb>
+      </AboutMeBlurb>
+      <ConnectLinks/>
     </AboutContainer>
   </Layout>
 )
 
 const AboutContainer = styled.div`
   margin-top: 54px;
-  height: 700px;
 `;
 
 const AboutMeBlurb = styled.div`

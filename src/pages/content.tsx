@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
+import { ConnectLinks } from '../components/ConnectLinks';
 
 const ContentPage = () => (
     <Layout>
@@ -18,14 +19,13 @@ const ContentPage = () => (
             </li>
           </ul>
           <h4>More coming soon.</h4>
+          <ConnectLinks/>
       </ContentContainer>
     </Layout>
   );
 
 const ContentContainer = styled.div`
-  height: 700px;
   @media only screen and (max-width: 375px) {
-    height: 500px;
   }
 `;
 
