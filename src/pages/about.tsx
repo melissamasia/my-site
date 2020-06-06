@@ -27,23 +27,26 @@ const AboutPage = () => (
 
 const AboutContainer = styled.div`
   margin-top: 54px;
+  text-align: center;
 `;
 
 const AboutMeBlurb = styled.div`
-    max-width: 500px;
-    margin: auto;
-    margin-top: 20px;
-    align-items: center;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px;
+  align-items: center;
 `;
 
 const AboutMeTitle = styled.h3`
   margin-bottom: 5px;
+  text-align: -webkit-auto;
 `;
 
 const AboutMeText = styled.p`
   font-size: 16px;
   max-width: 500px;
   word-spacing: 3px;
+  text-align: -webkit-auto;
 `;
 
 
