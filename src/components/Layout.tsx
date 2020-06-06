@@ -14,9 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <SiteBody>{children}</SiteBody>
       <ConnectLinks/>
       <StyledFooter>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        © {new Date().getFullYear()}
       </StyledFooter>
     </>
   )
