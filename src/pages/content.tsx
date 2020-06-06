@@ -10,6 +10,10 @@ const ContentPage = () => (
       <ContentContainer>
         <h1>Content + Projects</h1>
           <ul>
+            <li>
+              Telehealth pivot:
+             <a href="https://www.protocol.com/zocdoc-coronavirus-telehealth-pivot"> How my team at Zocdoc responded to the coronavirus pandemic</a>
+            </li>
             <li>A 
               <a href="https://medium.com/zocdoc-engineering/hosting-zocdocs-discount-academy-awards-a6ae2764580f"> discussion </a>
               of a uniquely Zocdoc tradition for Zocdoc's technology blog
