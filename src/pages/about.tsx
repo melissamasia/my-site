@@ -26,7 +26,7 @@ const AboutPage = () => (
 )
 
 const AboutContainer = styled.div`
-  margin-top: 54px;
+  margin: 54px 0px 20px 0px;
   text-align: center;
 `;
 
