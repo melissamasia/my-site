@@ -10,6 +10,9 @@ const ContentPage = () => (
       <ContentContainer>
         <h1>Content + Projects</h1>
           <ul>
+          <li>
+              I recently finished <a href="https://www.udemy.com/share/104ibiBUoacFhRRHo=/">this css art course!</a> Check out my drawings on my <a href="https://codepen.io/melissamasia">codepen profile</a>
+            </li>
             <li>
               <a href="https://zocdoc-engineering.medium.com/v-ghc-2020-what-i-learned-while-pretending-to-be-in-orlando-3b9d9a575bbd"> A blog post I wrote for the Zocdoc Engineering blog</a>
               {' '}about my experience at this year's virtual Grace Hopper conference
