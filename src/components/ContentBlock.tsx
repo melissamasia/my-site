@@ -5,26 +5,19 @@ import { VIEWPORT_BREAKPOINTS } from '../constants';
 
 export const ContentBlock: React.FC = props => {
     return (
-        <Container>
+        <div>
             <Squiggle/>
             <ContentContainer>
                 {props.children}
             </ContentContainer>
-        </Container>
+        </div>
     )
 }
 
-const Container = styled.div`
-`;
-
 const ContentContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     padding: 32px 16px 32px 16px;
 
     @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
-        padding: 8px;
+        padding: 16px;
     }
-
 `;

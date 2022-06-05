@@ -5,7 +5,7 @@ import HandWave from "../assets/hand-wave.svg";
 
 export const Greeting: React.FC = () => {
     return (
-        <>
+        <IntroContent>
             <Intro>
                 <TitleContainer>
                     <StyledHandwave/>
@@ -16,9 +16,16 @@ export const Greeting: React.FC = () => {
                 </Subtitle>
             </Intro>
             <StyledImage/>
-        </>
+        </IntroContent>
     );
 };
+
+const IntroContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+`;
 
 const TitleContainer = styled.h1`
     margin-top: 32px;

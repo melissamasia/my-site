@@ -1,3 +1,5 @@
 export const VIEWPORT_BREAKPOINTS = {
-    XSMALL: '375px',
+    XSMALL: '414px',
+    SMALL: '768px',
+    MEDIUM: '1020px',
 };
