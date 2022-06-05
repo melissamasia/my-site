@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Headshot } from './Headshot';
 import HandWave from "../assets/hand-wave.svg";
+import { VIEWPORT_BREAKPOINTS } from '../constants';
 
 export const Greeting: React.FC = () => {
     return (
         <IntroContent>
             <Intro>
+            <StyledImage/>
                 <TitleContainer>
                     <StyledHandwave/>
                     <Title>Hey! I'm Melissa.</Title>
@@ -20,28 +22,40 @@ export const Greeting: React.FC = () => {
                 <a href="https://www.linkedin.com/in/melissa-masia/">linkedIn</a>
                 </Subtitle>
             </Intro>
-            <StyledImage/>
         </IntroContent>
     );
 };
 
 const IntroContent = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    text-align: center;
+`;
+
+const Intro = styled.div`
+    margin: auto;
+    max-width: 700px;
+`;
+
+const StyledImage = styled(Headshot)`
+    */ I have to use important to override built in GatsbyImage styles */
+    display: block !important;
+    max-width: 200px;
+    margin: auto;
 `;
 
 const TitleContainer = styled.h1`
     margin-top: 32px;
     margin-bottom: 0px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 `;
 
 const Title = styled.h1`
-    margin: auto;
-    margin-left: 16px;
+    align-self: center;
+    margin: 0px;
+
+    @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
+        font-size: 28px;
+    }
 `;
 
 const Subtitle = styled.h2`
@@ -49,19 +63,13 @@ const Subtitle = styled.h2`
     line-height: 28px;
 `;
 
-const Intro = styled.div`
-    max-width: 500px;
-    margin-right: 8px;
-`;
-
-const StyledImage = styled(Headshot)`
-    max-width: 200px;
-`;
-
 const StyledHandwave = styled(HandWave)`
     height: 50px;
     width: auto;
+    align-self: center;
+    margin-right: 8px;
 `;
+
 const Divider = styled.span`
     margin-right: 8px;
     margin-left: 8px;

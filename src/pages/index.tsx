@@ -2,23 +2,25 @@ import React from "react";
 import { SEO } from "../components/SEO";
 import { Greeting } from '../components/Greeting';
 import { AboutDetails } from '../components/AboutDetails';
-import { ContentBlock } from "../components/ContentBlock";
 import { Projects } from '../components/Projects';
+import styled from "styled-components";
+import { VIEWPORT_BREAKPOINTS } from '../constants';
 
 const IndexPage = () => (
-  <>
+  <Container>
     <SEO title="Home" />
-    <br/>
-    <ContentBlock>
       <Greeting/>
-    </ContentBlock>
-    <ContentBlock>
       <AboutDetails/>
-    </ContentBlock>
-    <ContentBlock>
       <Projects/>
-    </ContentBlock>
-  </>
+  </Container>
 );
+
+const Container = styled.div`
+  padding: 32px 16px 32px 16px;
+
+  @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
+      padding: 16px;
+  }
+`;
 
 export default IndexPage

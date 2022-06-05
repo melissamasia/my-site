@@ -17,5 +17,5 @@ export const Headshot: React.FC<{className?: string}> = props => {
 };
 
 const StyledImage = styled(GatsbyImage)`
-  border-radius: 50%;
+  border-radius: 40%;
 `;
