@@ -7,6 +7,7 @@ import { ContentBlock } from "../components/ContentBlock";
 const IndexPage = () => (
   <>
     <SEO title="Home" />
+    <br/>
     <ContentBlock>
       <Greeting/>
     </ContentBlock>

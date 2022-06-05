@@ -1,11 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 import { ConnectLinks } from '../components/ConnectLinks';
 
 const ContentPage = () => (
-    <Layout>
+    <>
       <SEO title="Content" />
       <ContentContainer>
         <h1>Content + Projects</h1>
@@ -32,7 +31,7 @@ const ContentPage = () => (
           <h4>More coming soon.</h4>
           <ConnectLinks/>
       </ContentContainer>
-    </Layout>
+    </>
   );
 
 const ContentContainer = styled.div`
