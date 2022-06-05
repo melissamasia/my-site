@@ -18,8 +18,6 @@ const IndexPage = () => (
     <ContentBlock>
       <Projects/>
     </ContentBlock>
-    <ContentBlock>
-    </ContentBlock>
   </>
 );
 

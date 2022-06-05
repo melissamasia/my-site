@@ -14,6 +14,11 @@ export const Greeting: React.FC = () => {
                 <Subtitle>I'm a full stack software engineer currently based in NYC. Right now, I'm on the Practice tools team at
                     <a href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</a>.
                 </Subtitle>
+                <Subtitle>
+                <a href="mailto:melissamasia@gmail.com">email</a>
+                <Divider>⸱</Divider>
+                <a href="https://www.linkedin.com/in/melissa-masia/">linkedIn</a>
+                </Subtitle>
             </Intro>
             <StyledImage/>
         </IntroContent>
@@ -56,4 +61,8 @@ const StyledImage = styled(Headshot)`
 const StyledHandwave = styled(HandWave)`
     height: 50px;
     width: auto;
+`;
+const Divider = styled.span`
+    margin-right: 8px;
+    margin-left: 8px;
 `;
