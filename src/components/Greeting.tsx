@@ -7,8 +7,10 @@ export const Greeting: React.FC = () => {
     return (
         <>
             <Intro>
-                <HandWave/>
-                <Title>Hey! I'm Melissa.</Title>
+                <TitleContainer>
+                    <StyledHandwave/>
+                    <Title>Hey! I'm Melissa.</Title>
+                </TitleContainer>
                 <Subtitle>I'm a full stack software engineer currently based in NYC. Right now, I'm on the Practice tools team at
                     <a href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</a>.
                 </Subtitle>
@@ -18,8 +20,16 @@ export const Greeting: React.FC = () => {
     );
 };
 
-const Title = styled.h1`
+const TitleContainer = styled.h1`
     margin-top: 32px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+`;
+
+const Title = styled.h1`
+    margin: auto;
+    margin-left: 16px;
 `;
 
 const Subtitle = styled.h2`
@@ -34,4 +44,9 @@ const Intro = styled.div`
 
 const StyledImage = styled(Image)`
     max-width: 200px;
+`;
+
+const StyledHandwave = styled(HandWave)`
+    height: 50px;
+    width: auto;
 `;
