@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 export const ZvaProjectCard: React.FC = () => {
     const image = useStaticQuery(graphql`{
-        placeholderImage: file(relativePath: {eq: "art.png"}) {
+        placeholderImage: file(relativePath: {eq: "zva.png"}) {
           childImageSharp {
             gatsbyImageData(width: 300, layout: CONSTRAINED)
           }
@@ -14,9 +14,9 @@ export const ZvaProjectCard: React.FC = () => {
 
     return <ProjectCard 
         image={image.placeholderImage.childImageSharp.gatsbyImageData}
-        title="CSS Art on Codepen"
-        subtitle={<p>I recently finished <a href="https://www.udemy.com/share/104ibiBUoacFhRRHo=/">this css art course on Udemy.</a></p>}
-        href={'https://codepen.io/melissamasia'}
-        hrefText="Check out the drawings on my Codepen profile."
+        title="Zocdoc Value Awards"
+        subtitle={<p>I weighed in on a uniquely Zocdoc tradition in a piece on culture for the Zocdoc blog</p>}
+        href={'https://medium.com/zocdoc-engineering/hosting-zocdocs-discount-academy-awards-a6ae2764580f'}
+        hrefText="Check out the post on the Zocdoc Medium blog."
     />
 };
