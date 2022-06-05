@@ -1,7 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
 import { SEO } from "../components/SEO";
-import { ConnectLinks } from '../components/ConnectLinks';
 
 const ContentPage = () => (
     <>
@@ -29,7 +28,6 @@ const ContentPage = () => (
             </li>
           </ul>
           <h4>More coming soon.</h4>
-          <ConnectLinks/>
       </ContentContainer>
     </>
   );
