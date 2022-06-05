@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/image';
+import HandWave from "../assets/hand-wave.svg";
 
 export const Greeting: React.FC = () => {
     return (
         <>
             <Intro>
+                <HandWave/>
                 <Title>Hey! I'm Melissa.</Title>
                 <Subtitle>I'm a full stack software engineer currently based in NYC. Right now, I'm on the Practice tools team at
                     <a href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</a>.
