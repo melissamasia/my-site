@@ -4,10 +4,14 @@ import { DetailLineItem } from './DetailLineItem';
 import CSharpIcon from "../assets/c-sharp.svg";
 import AWSIcon from "../assets/aws.svg";
 import ReactIcon from '../assets/react-icon.svg';
+import BobaIcon from "../assets/boba.svg";
+import YogaIcon from "../assets/yoga.svg";
+import TravelIcon from '../assets/travel.svg';
+import CityIcon from "../assets/city.svg";
 
 export const AboutDetails: React.FC = () => (
     <Container>
-        <TechnologiesContent>
+        <Subsection>
             <h1>Lately, I've been working with</h1>
             <DetailLineItem text="React + Typescript, creating beatiful UIs">
                 <StyledReactIcon/>
@@ -15,21 +19,38 @@ export const AboutDetails: React.FC = () => (
             <DetailLineItem text="C#, for creating webservers + APIs">
                 <StyledCSharpIcon/>
             </DetailLineItem>
-            <DetailLineItem text="AWS services to host, and for the data layer">
+            <DetailLineItem text="AWS services for hosting + the data layer">
                 <StyledAwsIcon/>
             </DetailLineItem>
             <ul></ul>
-        </TechnologiesContent>
-        <InterestsContent>
+        </Subsection>
+        <Subsection>
             <h1>You can likely find me</h1>
-        </InterestsContent>
+            <DetailLineItem text="Exploring NYC (I'm always down to try a new restaurant!)">
+                <StyledCityIcon/>
+            </DetailLineItem>
+            <DetailLineItem text="Planning my next trip">
+                <StyledTravelIcon/>
+            </DetailLineItem>
+            <DetailLineItem text="Practicing yoga">
+                <StyledYogaIcon/>
+            </DetailLineItem>
+            <DetailLineItem text="Sipping bubble tea">
+                <StyledBobaIcon/>
+            </DetailLineItem>
+        </Subsection>
     </Container>
 );
+
+const Subsection = styled.div`
+    max-width: 500px;
+`;
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 `;
 
 const IconCss = css`
@@ -50,9 +71,18 @@ const StyledAwsIcon = styled(AWSIcon)`
     ${IconCss};
 `;
 
-const TechnologiesContent = styled.div`
+const StyledBobaIcon = styled(BobaIcon)`
+    ${IconCss};
 `;
 
+const StyledCityIcon = styled(CityIcon)`
+    ${IconCss};
+`;
 
-const InterestsContent = styled.div`
+const StyledTravelIcon = styled(TravelIcon)`
+    ${IconCss};
+`;
+
+const StyledYogaIcon = styled(YogaIcon)`
+    ${IconCss};
 `;
