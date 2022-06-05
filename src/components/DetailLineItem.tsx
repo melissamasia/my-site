@@ -8,8 +8,8 @@ type DetailLineItemProps = {
 export const DetailLineItem: React.FC<DetailLineItemProps> = props => {
     return (
         <LineItem>
-            <DetailsText>{props.text}</DetailsText>
             {props.children}
+            <DetailsText>{props.text}</DetailsText>
         </LineItem>
     );
 }
