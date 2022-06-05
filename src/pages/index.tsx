@@ -14,6 +14,10 @@ const IndexPage = () => (
     <ContentBlock>
       <AboutDetails/>
     </ContentBlock>
+    <ContentBlock>
+    </ContentBlock>
+    <ContentBlock>
+    </ContentBlock>
   </>
 );
 

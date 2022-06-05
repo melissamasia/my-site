@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Image } from '../components/image';
+import { Headshot } from './Headshot';
 import HandWave from "../assets/hand-wave.svg";
 
 export const Greeting: React.FC = () => {
@@ -49,7 +49,7 @@ const Intro = styled.div`
     margin-right: 8px;
 `;
 
-const StyledImage = styled(Image)`
+const StyledImage = styled(Headshot)`
     max-width: 200px;
 `;
 
