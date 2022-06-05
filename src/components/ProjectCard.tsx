@@ -13,18 +13,20 @@ type ProjectCardProps = {
 
 export const ProjectCard: React.FC<ProjectCardProps> = props => {
   return (
-      <div>
+      <Card>
               <StyledImage className={props.className} image={props.image} alt="card"/>
               <Banner>
                   <Title>{props.title}</Title>
                   <Subtitle>{props.subtitle}</Subtitle>
                   <Link href={props.href}>{props.hrefText}</Link>
               </Banner>
-      </div>
+      </Card>
   );
 };
 const Card = styled.div`
-
+    margin: auto;
+    max-height: 300px;
+    margin-bottom: 24px;
 `;
 
 const Banner = styled.div`
@@ -39,6 +41,7 @@ const Banner = styled.div`
 
 const StyledImage = styled(GatsbyImage)`
     border-radius: 10px;
+    max-height: 300px;
 `;
 
 const Title = styled.p`
