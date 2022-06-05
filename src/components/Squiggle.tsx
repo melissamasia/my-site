@@ -24,6 +24,7 @@ const CircleOne = styled.div`
 
 const CircleTwo = styled.div`
     ${CircleCss};
+    position: relative;
     top: 20px;
     left: 15px;
     background-position: 0px -20px;
