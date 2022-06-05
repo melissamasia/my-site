@@ -3,6 +3,7 @@ import { SEO } from "../components/SEO";
 import { Greeting } from '../components/Greeting';
 import { AboutDetails } from '../components/AboutDetails';
 import { ContentBlock } from "../components/ContentBlock";
+import { Projects } from '../components/Projects';
 
 const IndexPage = () => (
   <>
@@ -15,6 +16,7 @@ const IndexPage = () => (
       <AboutDetails/>
     </ContentBlock>
     <ContentBlock>
+      <Projects/>
     </ContentBlock>
     <ContentBlock>
     </ContentBlock>

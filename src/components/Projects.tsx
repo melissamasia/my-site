@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ZvaProjectCard } from './ZvaProjectCard';
 
 export const Projects: React.FC = () => {
     return (
         <>
-        <ProjectRow></ProjectRow>
-        <ProjectRow></ProjectRow>
+        <ProjectRow>
+            <ZvaProjectCard/>
+        </ProjectRow>
         </>
     )
 };
