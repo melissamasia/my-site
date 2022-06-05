@@ -3,15 +3,21 @@ import styled from 'styled-components';
 import { colors } from '../styles/colors';
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
-import { Greeting } from '../components/Greeting';
-import { Squiggle } from "../components/Squiggle";
+import { ConnectLinks } from '../components/ConnectLinks';
+
 
 const IndexPage = () => (
-  <>
+  <Layout>
     <SEO title="Home" />
-    <Squiggle/>
-    <Greeting/>
-  </>
+    <HomeContainer>
+      <Title>Hi, I'm Melissa.</Title>
+      <Subtitle>
+        I'm a full stack software engineer currently based in NYC.
+        Right now, I'm on the Provider team @ <ZocdocLink href="https://www.zocdoc.com/">Zocdoc</ZocdocLink>.
+      </Subtitle>
+      <ConnectLinks/>
+    </HomeContainer>
+  </Layout>
 );
 
 const HomeContainer = styled.div`

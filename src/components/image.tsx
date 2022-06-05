@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export const Image = () => {
+export const Image: React.FC<{className?: string}> = props => {
   const data = useStaticQuery(graphql`{
   placeholderImage: file(relativePath: {eq: "me.png"}) {
     childImageSharp {
@@ -13,12 +13,9 @@ export const Image = () => {
 }
 `)
 
-  return <StyledImage image={data.placeholderImage.childImageSharp.gatsbyImageData} alt="headshpt" />;
+  return <StyledImage className={props.className} image={data.placeholderImage.childImageSharp.gatsbyImageData} alt="headshpt" />;
 };
 
 const StyledImage = styled(GatsbyImage)`
   border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  margin: auto;
 `;
