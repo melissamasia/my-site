@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes }from 'styled-components';
 import { Headshot } from './Headshot';
 import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
@@ -63,11 +63,22 @@ const Subtitle = styled.h2`
     line-height: 28px;
 `;
 
+const waveAnimation = keyframes`
+to {
+    transform: rotate(70deg);
+  }
+`;
+
 const StyledHandwave = styled(HandWave)`
     height: 50px;
     width: auto;
     align-self: center;
     margin-right: 8px;
+    animation-name: ${waveAnimation};
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
 `;
 
 const Divider = styled.span`
