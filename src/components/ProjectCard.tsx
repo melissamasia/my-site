@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from 'styled-components';
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import Arrow from '../assets/arrow.svg';
+import { colors } from '../styles/colors';
 
 type ProjectCardProps = {
     image: IGatsbyImageData;
@@ -74,6 +75,10 @@ const Subtitle = styled.p`
 
 const Link = styled.a`
     font-size: 24px;
+    color: ${colors.blueRibbon};
+    :hover {
+        color: ${colors.mediumRedViolet};
+    }
     line-height: 14px;
 `;
 

@@ -55,7 +55,7 @@ const Content = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 `;
 
 const StyledImage = styled(GatsbyImage)`

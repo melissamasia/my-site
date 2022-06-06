@@ -4,6 +4,7 @@ import { Headshot } from './Headshot';
 import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
 import Arrow from '../assets/arrow.svg';
+import { colors } from '../styles/colors';
 
 export const Greeting: React.FC = () => {
 
@@ -25,12 +26,12 @@ export const Greeting: React.FC = () => {
                     <Title>Hey! I'm Melissa.</Title>
                 </TitleContainer>
                 <Subtitle>I'm a full stack software engineer currently based in NYC. Right now, I'm on the Practice tools team at
-                    <a href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</a>.
+                    <Link href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</Link>.
                 </Subtitle>
                 <Subtitle>
-                <a href="mailto:melissamasia@gmail.com">email</a>
+                <Link href="mailto:melissamasia@gmail.com">email</Link>
                 <Divider>⸱</Divider>
-                <a href="https://www.linkedin.com/in/melissa-masia/">linkedIn</a>
+                <Link href="https://www.linkedin.com/in/melissa-masia/">linkedIn</Link>
                 </Subtitle>
             </Intro>
             <StyledArrow onClick={onClickArrow}/>
@@ -65,6 +66,7 @@ const TitleContainer = styled.h1`
 `;
 
 const Title = styled.h1`
+    color: ${colors.bunker};
     align-self: center;
     margin: 0px;
 
@@ -76,6 +78,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
     margin-top: 8px;
     line-height: 28px;
+    color: ${colors.bunker};
 `;
 
 
@@ -105,11 +108,19 @@ const bounceAnimation = keyframes`
 
 
 const StyledArrow = styled(Arrow)`
-    margin-top: 48px;
+    margin-top: 156px;
     transform: rotate(180deg);
     animation-duration: 1.5s;
     animation-name: ${bounceAnimation};
     animation-direction: alternate;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    color: ${colors.mediumRedViolet};
+`;
+
+const Link = styled.a`
+    color: ${colors.blueRibbon};
+    :hover {
+        color: ${colors.mediumRedViolet};
+    }
 `;
