@@ -1,48 +1,26 @@
 import React from "react";
-import styled from 'styled-components';
-import { colors } from '../styles/colors';
-import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
-import { ConnectLinks } from '../components/ConnectLinks';
-
+import { Greeting } from '../components/Greeting';
+import { AboutDetails } from '../components/AboutDetails';
+import { Projects } from '../components/Projects';
+import styled from "styled-components";
+import { VIEWPORT_BREAKPOINTS } from '../constants';
 
 const IndexPage = () => (
-  <Layout>
+  <Container>
     <SEO title="Home" />
-    <HomeContainer>
-      <Title>Hi, I'm Melissa.</Title>
-      <Subtitle>
-        I'm a full stack software engineer currently based in NYC.
-        Right now, I'm on the Provider team @ <ZocdocLink href="https://www.zocdoc.com/">Zocdoc</ZocdocLink>.
-      </Subtitle>
-      <ConnectLinks/>
-    </HomeContainer>
-  </Layout>
+      <Greeting/>
+      <AboutDetails/>
+      <Projects/>
+  </Container>
 );
 
-const HomeContainer = styled.div`
-  max-width: 1000px;
-`;
+const Container = styled.div`
+  padding: 32px 16px 32px 16px;
 
-const Title = styled.h1`
-  margin-top: 80px !important;
-  font-weight: 400;
-  font-size: 48px;
-`;
-
-const Subtitle = styled.h3`
-  margin-top: 10px;
-  font-weight: normal;
-  font-size: 30px;
-  width: 900px;
-  @media only screen and (max-width: 415px) {
-    max-width: 300px;
+  @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
+      padding: 16px;
   }
 `;
-
-const ZocdocLink = styled.a`
-  color: ${colors.oracle}
-`;
-
 
 export default IndexPage
