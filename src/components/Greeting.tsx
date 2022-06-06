@@ -108,7 +108,7 @@ const bounceAnimation = keyframes`
 
 
 const StyledArrow = styled(Arrow)`
-    margin-top: 128px;
+    margin-top: 48px;
     transform: rotate(180deg);
     animation-duration: 1.5s;
     animation-name: ${bounceAnimation};

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export const AboutDetails: React.FC = () => {
     const image = useStaticQuery(graphql`{
@@ -32,7 +32,7 @@ export const AboutDetails: React.FC = () => {
                      <Subtitle>
                          Outside of work, you can find me
                      </Subtitle>
-                     <Detail>exploring NYC (perhaps also sipping bubble tea)</Detail>
+                     <Detail>Exploring NYC (perhaps also sipping bubble tea)</Detail>
                      <Detail>Practicing yoga</Detail>
                      <Detail>Planning my next trip</Detail>
                  </TextContent>
