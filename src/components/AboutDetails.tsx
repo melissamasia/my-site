@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from 'styled-components';
 import { DetailLineItem } from './DetailLineItem';
 import CSharpIcon from "../assets/c-sharp.svg";
@@ -10,36 +10,50 @@ import TravelIcon from '../assets/travel.svg';
 import CityIcon from "../assets/city.svg";
 import { VIEWPORT_BREAKPOINTS } from "../constants";
 
-export const AboutDetails: React.FC = () => (
-    <Container>
-        <Subsection>
-            <Title>Lately, I've been working with</Title>
-            <DetailLineItem text="React + Typescript, creating beatiful UIs">
-                <StyledReactIcon/>
-            </DetailLineItem>
-            <DetailLineItem text="C#, for creating webservers + APIs">
-                <StyledCSharpIcon/>
-            </DetailLineItem>
-            <DetailLineItem text="AWS services for hosting + the data layer">
-                <StyledAwsIcon/>
-            </DetailLineItem>
-        </Subsection>
-        <Subsection>
-            <Title>You can likely find me</Title>
-            <DetailLineItem text="Exploring NYC (I'm always down to try a new restaurant!)">
-                <StyledCityIcon/>
-            </DetailLineItem>
-            <DetailLineItem text="Planning my next trip">
-                <StyledTravelIcon/>
-            </DetailLineItem>
-            <DetailLineItem text="Practicing yoga">
-                <StyledYogaIcon/>
-            </DetailLineItem>
-            <DetailLineItem text="Sipping bubble tea">
-                <StyledBobaIcon/>
-            </DetailLineItem>
-        </Subsection>
-    </Container>
+type Section = "tech" | "find-me";
+
+export const AboutDetails: React.FC = () => {
+    const [openSection, setOpenSection] = useState<Section>('tech');
+
+    return(
+        <Container>
+            {openSection == 'tech' && <TechView/>}
+            {openSection == 'find-me' && <FindMeView/>}
+        </Container>
+    );
+};
+
+const TechView =  () => (
+    <Subsection>
+        <Title>Lately, I've been working with</Title>
+        <DetailLineItem text="React + Typescript, creating beatiful UIs">
+            <StyledReactIcon/>
+        </DetailLineItem>
+        <DetailLineItem text="C#, for creating webservers + APIs">
+            <StyledCSharpIcon/>
+        </DetailLineItem>
+        <DetailLineItem text="AWS services for hosting + the data layer">
+            <StyledAwsIcon/>
+        </DetailLineItem>
+    </Subsection>   
+);
+
+const FindMeView =  () => (
+    <Subsection>
+        <Title>You can likely find me</Title>
+        <DetailLineItem text="Exploring NYC (I'm always down to try a new restaurant!)">
+            <StyledCityIcon/>
+        </DetailLineItem>
+        <DetailLineItem text="Planning my next trip">
+            <StyledTravelIcon/>
+        </DetailLineItem>
+        <DetailLineItem text="Practicing yoga">
+            <StyledYogaIcon/>
+        </DetailLineItem>
+        <DetailLineItem text="Sipping bubble tea">
+            <StyledBobaIcon/>
+        </DetailLineItem>
+    </Subsection>
 );
 
 const Title = styled.h1`
@@ -51,11 +65,14 @@ const Title = styled.h1`
 `;
 
 const Subsection = styled.div`
-    max-width: 500px;
-    width: 450px;
     margin: auto;
     margin-top: 0px;
     overflow: wrap;
+    border: 12px;
+    border-radius: 12px;
+    background: grey;
+    height: 100%;
+    padding: 32px;
 
     @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
         max-width: 360px;
@@ -70,9 +87,7 @@ const Subsection = styled.div`
 `;
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    height: 500px;
 `;
 
 const IconCss = css`

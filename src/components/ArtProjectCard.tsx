@@ -15,7 +15,7 @@ export const ArtProjectCard: React.FC = () => {
     return <ProjectCard 
         image={image.placeholderImage.childImageSharp.gatsbyImageData}
         title="CSS Art on Codepen"
-        subtitle={<p>I recently finished <a href="https://www.udemy.com/share/104ibiBUoacFhRRHo=/">this css art course on Udemy.</a></p>}
+        subtitle={<p>I recently finished <a href="https://www.udemy.com/share/104ibiBUoacFhRRHo=/">this introductory css art course on Udemy.</a></p>}
         href={'https://codepen.io/melissamasia'}
         hrefText="Check out the drawings on my Codepen profile."
     />

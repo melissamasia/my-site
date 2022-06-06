@@ -8,7 +8,6 @@ import { TelehealthProjectCard } from './TelehealthProjectCard';
 export const Projects: React.FC = () => {
     return (
         <>
-        <Title>Projects</Title>
         <ProjectRow>
             <ArtProjectCard/>
             <BlogProjectCard/>
@@ -28,10 +27,4 @@ const ProjectRow = styled.div`
     &:not(:last-child){
         margin-bottom:
     }
-`;
-
-const Title = styled.h1`
-    margin-top: 0px;
-    margin-bottom: 16px;
-    text-align: center;
 `;

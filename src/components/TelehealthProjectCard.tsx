@@ -15,7 +15,7 @@ export const TelehealthProjectCard: React.FC = () => {
     return <ProjectCard 
         image={image.placeholderImage.childImageSharp.gatsbyImageData}
         title="Zocdoc Video Service"
-        subtitle={<p>How my team at Zocdoc responded to the coronavirus pandemic</p>}
+        subtitle={<p>At the beginning of the coronavirus pandemic in the US, my team responded by building a telehealth solution within Zocdoc.</p>}
         href={'"https://www.protocol.com/zocdoc-coronavirus-telehealth-pivot'}
         hrefText="Read more on Protocol."
     />

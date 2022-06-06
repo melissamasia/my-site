@@ -15,7 +15,7 @@ export const ZvaProjectCard: React.FC = () => {
     return <ProjectCard 
         image={image.placeholderImage.childImageSharp.gatsbyImageData}
         title="Zocdoc Value Awards"
-        subtitle={<p>I weighed in on a uniquely Zocdoc tradition in a piece on culture for the Zocdoc blog</p>}
+        subtitle={<p>I weighed on a uniquely Zocdoc culture event for the Zocdoc tech blog.</p>}
         href={'https://medium.com/zocdoc-engineering/hosting-zocdocs-discount-academy-awards-a6ae2764580f'}
         hrefText="Check out the post on the Zocdoc Medium blog."
     />

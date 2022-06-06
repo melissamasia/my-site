@@ -21,4 +21,5 @@ const LineItem = styled.div`
 
 const DetailsText = styled.p`
     line-height: 24px;
+    font-size: 24px;
 `;

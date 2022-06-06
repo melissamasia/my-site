@@ -3,6 +3,7 @@ import styled, { keyframes }from 'styled-components';
 import { Headshot } from './Headshot';
 import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
+import Arrow from '../assets/arrow.svg';
 
 export const Greeting: React.FC = () => {
     return (
@@ -22,12 +23,16 @@ export const Greeting: React.FC = () => {
                 <a href="https://www.linkedin.com/in/melissa-masia/">linkedIn</a>
                 </Subtitle>
             </Intro>
+            <StyledArrow/>
         </IntroContent>
     );
 };
 
 const IntroContent = styled.div`
+    margin-top: 32px;
     text-align: center;
+    height: 100vh;
+    margin-bottom: 16px;
 `;
 
 const Intro = styled.div`
@@ -63,25 +68,38 @@ const Subtitle = styled.h2`
     line-height: 28px;
 `;
 
-const waveAnimation = keyframes`
-to {
-    transform: rotate(70deg);
-  }
-`;
 
 const StyledHandwave = styled(HandWave)`
     height: 50px;
     width: auto;
     align-self: center;
     margin-right: 8px;
-    animation-name: ${waveAnimation};
-    animation-duration: 0.5s;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    animation-iteration-count: 4;
 `;
 
 const Divider = styled.span`
     margin-right: 8px;
     margin-left: 8px;
+`;
+
+const bounceAnimation = keyframes`
+  0% {
+    transform: scale(1) rotate(180deg);
+  }
+  50% {
+    transform: scale(1.25) rotate(180deg);
+  }
+  100% { 
+    transform: scale(1.5) rotate(180deg);
+  }
+`;
+
+
+const StyledArrow = styled(Arrow)`
+    margin-top: 48px;
+    transform: rotate(180deg);
+    animation-duration: 1.5s;
+    animation-name: ${bounceAnimation};
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 `;
