@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = props => {
 
     return (
       <Card onClick={toggleFocus}>
-              <StyledImage className={props.className} image={props.image} alt="card"/>
+              <StyledImage className={props.className} image={props.image} alt={`${props.title}-picture`}/>
               <Banner isFocused={isFocused}>
                   <Row>
                     <Title>{props.title}</Title>

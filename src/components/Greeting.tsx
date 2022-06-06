@@ -6,6 +6,16 @@ import { VIEWPORT_BREAKPOINTS } from '../constants';
 import Arrow from '../assets/arrow.svg';
 
 export const Greeting: React.FC = () => {
+
+    const onClickArrow =  () => {
+        var aboutMeTitle = document.getElementById("about-me-title");
+        if (aboutMeTitle){
+            aboutMeTitle.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    }
+
     return (
         <IntroContent>
             <Intro>
@@ -23,7 +33,7 @@ export const Greeting: React.FC = () => {
                 <a href="https://www.linkedin.com/in/melissa-masia/">linkedIn</a>
                 </Subtitle>
             </Intro>
-            <StyledArrow/>
+            <StyledArrow onClick={onClickArrow}/>
         </IntroContent>
     );
 };

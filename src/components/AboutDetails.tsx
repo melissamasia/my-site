@@ -1,125 +1,76 @@
-import React, { useState } from "react";
-import styled, { css } from 'styled-components';
-import { DetailLineItem } from './DetailLineItem';
-import CSharpIcon from "../assets/c-sharp.svg";
-import AWSIcon from "../assets/aws.svg";
-import ReactIcon from '../assets/react-icon.svg';
-import BobaIcon from "../assets/boba.svg";
-import YogaIcon from "../assets/yoga.svg";
-import TravelIcon from '../assets/travel.svg';
-import CityIcon from "../assets/city.svg";
-import { VIEWPORT_BREAKPOINTS } from "../constants";
-
-type Section = "tech" | "find-me";
+import React from "react";
+import styled from 'styled-components';
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 export const AboutDetails: React.FC = () => {
-    const [openSection, setOpenSection] = useState<Section>('tech');
+    const image = useStaticQuery(graphql`{
+        placeholderImage: file(relativePath: {eq: "about.png"}) {
+          childImageSharp {
+            gatsbyImageData(width: 300, layout: FIXED)
+          }
+        }
+      }
+    `)
 
     return(
-        <Container>
-            {openSection == 'tech' && <TechView/>}
-            {openSection == 'find-me' && <FindMeView/>}
-        </Container>
+        <>
+            <Title id="about-me-title">About me</Title>
+            <Content>
+                 <StyledImage image={image.placeholderImage.childImageSharp.gatsbyImageData} alt="about" />
+                 <TextContent>
+                     <p>
+                        I'm a senior full stack engineer at Zocdoc with a love of project leadership. I've been at Zocdoc since graduating
+                        from Vanderbilt University with a B.S. in Computer science and a minor in engineering management.
+                     </p>
+                     <Subtitle>
+                         Technologies I've been working with lately
+                     </Subtitle>
+                     <Detail>React + Typescript, for building beautiful UIs</Detail>
+                     <Detail>C# + .NET Core for webservers + APIs</Detail>
+                     <Detail>AWS services for hosting + the data layer</Detail>
+                     <Subtitle>
+                         Outside of work, you can find me
+                     </Subtitle>
+                     <Detail>exploring NYC (perhaps also sipping bubble tea)</Detail>
+                     <Detail>Practicing yoga</Detail>
+                     <Detail>Planning my next trip</Detail>
+                 </TextContent>
+            </Content>
+        </>
     );
 };
 
-const TechView =  () => (
-    <Subsection>
-        <Title>Lately, I've been working with</Title>
-        <DetailLineItem text="React + Typescript, creating beatiful UIs">
-            <StyledReactIcon/>
-        </DetailLineItem>
-        <DetailLineItem text="C#, for creating webservers + APIs">
-            <StyledCSharpIcon/>
-        </DetailLineItem>
-        <DetailLineItem text="AWS services for hosting + the data layer">
-            <StyledAwsIcon/>
-        </DetailLineItem>
-    </Subsection>   
-);
-
-const FindMeView =  () => (
-    <Subsection>
-        <Title>You can likely find me</Title>
-        <DetailLineItem text="Exploring NYC (I'm always down to try a new restaurant!)">
-            <StyledCityIcon/>
-        </DetailLineItem>
-        <DetailLineItem text="Planning my next trip">
-            <StyledTravelIcon/>
-        </DetailLineItem>
-        <DetailLineItem text="Practicing yoga">
-            <StyledYogaIcon/>
-        </DetailLineItem>
-        <DetailLineItem text="Sipping bubble tea">
-            <StyledBobaIcon/>
-        </DetailLineItem>
-    </Subsection>
-);
-
-const Title = styled.h1`
-    margin-top: 24px;
-
-    @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
-        font-size: 24px;
-    }
-`;
-
-const Subsection = styled.div`
+const Title = styled.h3`
     margin: auto;
-    margin-top: 0px;
-    overflow: wrap;
-    border: 12px;
-    border-radius: 12px;
-    background: grey;
-    height: 100%;
-    padding: 32px;
-
-    @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
-        max-width: 360px;
-        width: 360px;
-    }
-
-    @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
-        max-width: 300px;
-        width: 300px;
-        margin: auto;
-    }
+    width: 100%;
+    text-align: center;
+    margin-bottom: 16px;
+    padding-top: 24px;
 `;
 
-const Container = styled.div`
-    height: 500px;
+const Content = styled.div`
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 32px;
 `;
 
-const IconCss = css`
-    height: 25px;
-    width: auto;
-    margin-right: 4px;
+const StyledImage = styled(GatsbyImage)`
 `;
 
-const StyledReactIcon = styled(ReactIcon)`
-    ${IconCss};
+const TextContent = styled.div`
+    max-width: 700px;
 `;
 
-const StyledCSharpIcon = styled(CSharpIcon)`
-    ${IconCss};
+const Subtitle = styled.div`
+    font-weight: bold;
+    margin-bottom: 8px;
 `;
 
-const StyledAwsIcon = styled(AWSIcon)`
-    ${IconCss};
-`;
-
-const StyledBobaIcon = styled(BobaIcon)`
-    ${IconCss};
-`;
-
-const StyledCityIcon = styled(CityIcon)`
-    ${IconCss};
-`;
-
-const StyledTravelIcon = styled(TravelIcon)`
-    ${IconCss};
-`;
-
-const StyledYogaIcon = styled(YogaIcon)`
-    ${IconCss};
+const Detail = styled.p`
+    line-height: 14px;
+    font-size: 14px;
 `;
