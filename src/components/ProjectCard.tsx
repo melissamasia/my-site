@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import styled from 'styled-components';
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import Arrow from '../assets/arrow.svg';
 import { colors } from '../styles/colors';
 
 type ProjectCardProps = {
-    image: IGatsbyImageData;
+    imagePath: string;
     title: string;
     subtitle: React.ReactElement;
     href: string;
@@ -22,7 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = props => {
 
     return (
       <Card onClick={toggleFocus}>
-              <StyledImage className={props.className} image={props.image} alt={`${props.title}-picture`}/>
+              <StyledImage className={props.className} src={props.imagePath} alt={`${props.title}-picture`}/>
               <Banner isFocused={isFocused}>
                   <Row>
                     <Title>{props.title}</Title>
@@ -53,7 +53,7 @@ const Banner = styled.div`
     transition: height 0.3s ease-out;
 `;
 
-const StyledImage = styled(GatsbyImage)`
+const StyledImage = styled(StaticImage)`
     border-radius: 10px;
     max-height: 300px;
 `;

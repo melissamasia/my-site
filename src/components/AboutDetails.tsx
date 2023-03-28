@@ -1,23 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 export const AboutDetails: React.FC = () => {
-    const image = useStaticQuery(graphql`{
-        placeholderImage: file(relativePath: {eq: "about.png"}) {
-          childImageSharp {
-            gatsbyImageData(width: 300, layout: FIXED)
-          }
-        }
-      }
-    `)
-
     return(
         <>
             <Title id="about-me-title">About me</Title>
             <Content>
-                 <StyledImage image={image.placeholderImage.childImageSharp.gatsbyImageData} alt="about" />
+                 <StyledImage src="../images/about.png" alt="about" />
                  <TextContent>
                      <p>
                         I'm a senior full stack engineer at Zocdoc with a love of project leadership. I've been at Zocdoc since graduating
@@ -58,7 +48,7 @@ const Content = styled.div`
     margin-bottom: 48px;
 `;
 
-const StyledImage = styled(GatsbyImage)`
+const StyledImage = styled(StaticImage)`
 `;
 
 const TextContent = styled.div`

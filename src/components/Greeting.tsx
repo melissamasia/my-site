@@ -58,7 +58,7 @@ const StyledImage = styled(Headshot)`
     margin: auto;
 `;
 
-const TitleContainer = styled.h1`
+const TitleContainer = styled.div`
     margin-top: 32px;
     margin-bottom: 0px;
     display: flex;
