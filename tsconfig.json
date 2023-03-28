@@ -10,7 +10,11 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": false,
-    "allowJs": true
+    "noImplicitAny": false,
+    "allowJs": true,
+    "baseUrl": "src",
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
   },
   "exclude": ["node_modules", "public", ".cache"]
 }
