@@ -5,7 +5,7 @@ import { VIEWPORT_BREAKPOINTS } from '../constants';
 import { colors } from '../styles/colors';
 import { StaticImage } from "gatsby-plugin-image";
 
-export const Greeting: React.FC = () => {
+export const Home: React.FC = () => {
     return (
         <IntroContent>
             <Intro>

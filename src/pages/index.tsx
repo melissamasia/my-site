@@ -1,5 +1,5 @@
 import React from "react";
-import { Greeting } from '../components/Greeting';
+import { Home } from '../components/Home';
 import styled from "styled-components";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
 import { Head as SeoHead } from '../components/Head';
@@ -8,7 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const IndexPage = () => (
   <Container>
       <StaticImage src="../images/icon.png" alt="logo" width={50} />
-      <Greeting/>
+      <Home/>
   </Container>
 );
 
