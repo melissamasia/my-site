@@ -1,26 +1,15 @@
 import React from 'react';
-import styled, { keyframes }from 'styled-components';
-import { Headshot } from './Headshot';
+import styled from 'styled-components';
 import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
-import Arrow from '../assets/arrow.svg';
 import { colors } from '../styles/colors';
+import { StaticImage } from "gatsby-plugin-image";
 
 export const Greeting: React.FC = () => {
-
-    const onClickArrow =  () => {
-        var aboutMeTitle = document.getElementById("about-me-title");
-        if (aboutMeTitle){
-            aboutMeTitle.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    }
-
     return (
         <IntroContent>
             <Intro>
-            <StyledImage/>
+            <StaticImage src="../images/me.jpg" alt="headshot" width={285} aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
                 <TitleContainer>
                     <StyledHandwave/>
                     <Title>Hey! I'm Melissa.</Title>
@@ -29,32 +18,29 @@ export const Greeting: React.FC = () => {
                     <Link href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</Link>.
                 </Subtitle>
                 <Subtitle>
-                <Link href="mailto:melissamasia@gmail.com">email</Link>
-                <Divider>⸱</Divider>
-                <Link href="https://www.linkedin.com/in/melissa-masia/">linkedIn</Link>
+                    <Link href="mailto:melissamasia@gmail.com">about</Link>
+                    <Divider>⸱</Divider>
+                    <Link href="https://www.linkedin.com/in/melissa-masia/">projects</Link>
+                    <Divider>⸱</Divider>
+                    <Link href="https://www.linkedin.com/in/melissa-masia/">contact</Link>
                 </Subtitle>
             </Intro>
-            <StyledArrow onClick={onClickArrow}/>
         </IntroContent>
     );
 };
 
 const IntroContent = styled.div`
     margin-top: 32px;
-    text-align: center;
-    height: 100vh;
     margin-bottom: 16px;
+    text-align: center;
+
+    @media(max-width:${VIEWPORT_BREAKPOINTS.XSMALL}){
+        margin-top: 16px;
+    }
 `;
 
 const Intro = styled.div`
-    margin: auto;
     max-width: 700px;
-`;
-
-const StyledImage = styled(Headshot)`
-    */ I have to use important to override built in GatsbyImage styles */
-    display: block !important;
-    max-width: 200px;
     margin: auto;
 `;
 
@@ -75,9 +61,10 @@ const Title = styled.h1`
     }
 `;
 
-const Subtitle = styled.h2`
+const Subtitle = styled.h3`
     margin-top: 8px;
     line-height: 28px;
+    font-weight: 100;
     color: ${colors.bunker};
 `;
 
@@ -94,33 +81,9 @@ const Divider = styled.span`
     margin-left: 8px;
 `;
 
-const bounceAnimation = keyframes`
-  0% {
-    transform: scale(1) rotate(180deg);
-  }
-  50% {
-    transform: scale(1.25) rotate(180deg);
-  }
-  100% { 
-    transform: scale(1.5) rotate(180deg);
-  }
-`;
-
-
-const StyledArrow = styled(Arrow)`
-    margin-top: 48px;
-    transform: rotate(180deg);
-    animation-duration: 1.5s;
-    animation-name: ${bounceAnimation};
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    color: ${colors.mediumRedViolet};
-`;
-
 const Link = styled.a`
-    color: ${colors.blueRibbon};
+    color: ${colors.easternBlue};
     :hover {
-        color: ${colors.mediumRedViolet};
+        color: ${colors.frenchRose};
     }
 `;
