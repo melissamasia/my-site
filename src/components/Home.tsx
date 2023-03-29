@@ -4,8 +4,14 @@ import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
 import { colors } from '../styles/colors';
 import { StaticImage } from "gatsby-plugin-image";
+import { Page } from '../pages/index';
 
-export const Home: React.FC = () => {
+export const Home: React.FC<{ onChangePage: (newPage: Page) => void;}> = props => {
+
+    const onClickAboutMe = () => {
+        props.onChangePage('ABOUT');
+    };
+
     return (
         <IntroContent>
             <Intro>
@@ -18,11 +24,11 @@ export const Home: React.FC = () => {
                     <Link href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferer"> Zocdoc</Link>.
                 </Subtitle>
                 <Subtitle>
-                    <Link href="mailto:melissamasia@gmail.com">about</Link>
+                    <Link onClick={onClickAboutMe}>about me</Link>
                     <Divider>⸱</Divider>
-                    <Link href="https://www.linkedin.com/in/melissa-masia/">projects</Link>
+                    <Link href="https://www.linkedin.com/in/melissa-masia/">linkedin</Link>
                     <Divider>⸱</Divider>
-                    <Link href="https://www.linkedin.com/in/melissa-masia/">contact</Link>
+                    <Link href="https://github.com/melissamasia">github</Link>
                 </Subtitle>
             </Intro>
         </IntroContent>
