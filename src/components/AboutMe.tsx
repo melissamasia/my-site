@@ -14,7 +14,7 @@ export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void;}> = prop
         <ContentContainer>
             <Content>
                 <Row>
-                    <StaticImage src="../images/me2.jpg" alt="headshot" width={285} aspectRatio={0.95}  layout="fixed" imgStyle={{ borderRadius: '80%' }} />
+                    <StaticImage src="../images/me2.jpg" alt="headshot" width={285} aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
                     <TextContent>
                         I'm a Senior full stack engineer at Zocdoc. I particularly thrive when leading complex projects. Before Zocdoc, I graduated from Vanderbilt University with a B.S. in Computer science and a minor in engineering management.
                     </TextContent>
@@ -65,7 +65,6 @@ const Row = styled.div`
     display: flex;
     margin-bottom: 24px;
     flex-direction: row;
-    
     @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
         flex-direction: column;
     }
