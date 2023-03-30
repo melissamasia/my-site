@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Home } from '../components/Home';
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
 import { Head as SeoHead } from '../components/Head';
 import { StaticImage } from "gatsby-plugin-image";
@@ -18,8 +18,8 @@ const IndexPage = () => {
   return (
     <Container>
       <StaticImage src="../images/icon.png" alt="logo" width={50} />
-      {page === 'HOME' && <Home onChangePage={onChangePage}/>}
-      {page === 'ABOUT' && <AboutMe onChangePage={onChangePage}/>}
+      {page === 'HOME' && <AnimatedHome onChangePage={onChangePage}/>}
+      {page === 'ABOUT' && <AnimatedAboutMe onChangePage={onChangePage}/>}
     </Container>
   )
 }
@@ -33,5 +33,44 @@ const Container = styled.div`
       padding: 16px;
   }
 `;
+
+const aboutAnimation = keyframes`
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const AnimatedAboutMe = styled(AboutMe)`
+  animation-name: ${aboutAnimation};
+  animation-duration: 0.5s;
+`;
+
+const homeAnimation = keyframes`
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const AnimatedHome = styled(Home)`
+  animation-name: ${homeAnimation};
+  animation-duration: 0.5s;
+`;
+
 
 export default IndexPage

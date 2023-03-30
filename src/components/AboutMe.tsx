@@ -5,13 +5,13 @@ import { colors } from '../styles/colors';
 import { StaticImage } from "gatsby-plugin-image";
 import { Page } from '../pages/index';
 
-export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void;}> = props => {
+export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void; className?: string}> = props => {
     const onClickBackToHome = () => {
         props.onChangePage('HOME');
     };
 
     return (
-        <ContentContainer>
+        <ContentContainer className={props.className}>
             <Content>
                 <Row>
                     <HeadshotContainer>

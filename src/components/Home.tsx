@@ -1,19 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import HandWave from "../assets/hand-wave.svg";
 import { VIEWPORT_BREAKPOINTS } from '../constants';
 import { colors } from '../styles/colors';
 import { StaticImage } from "gatsby-plugin-image";
 import { Page } from '../pages/index';
 
-export const Home: React.FC<{ onChangePage: (newPage: Page) => void;}> = props => {
+export const Home: React.FC<{ onChangePage: (newPage: Page) => void; className?: string}> = props => {
 
     const onClickAboutMe = () => {
         props.onChangePage('ABOUT');
     };
 
     return (
-        <IntroContent>
+        <IntroContent className={props.className}>
             <Intro>
             <StaticImage src="../images/me.jpg" alt="headshot" width={285} aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
                 <TitleContainer>
@@ -74,12 +74,46 @@ const Subtitle = styled.h3`
     color: ${colors.bunker};
 `;
 
+const waveAnimation = keyframes`
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+`;
+
 
 const StyledHandwave = styled(HandWave)`
     height: 50px;
     width: auto;
     align-self: center;
     margin-right: 8px;
+    :hover {
+        animation-name: ${waveAnimation};
+        -webkit-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-animation-name: ${waveAnimation};
+        animation-duration: 2s;
+    }
 `;
 
 const Divider = styled.span`
