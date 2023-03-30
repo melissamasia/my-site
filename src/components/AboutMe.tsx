@@ -14,10 +14,15 @@ export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void;}> = prop
         <ContentContainer>
             <Content>
                 <Row>
-                    <StaticImage src="../images/me2.jpg" alt="headshot" width={285} aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
-                    <TextContent>
-                        I'm a Senior full stack engineer at Zocdoc. I particularly thrive when leading complex projects. Before Zocdoc, I graduated from Vanderbilt University with a B.S. in Computer science and a minor in engineering management.
-                    </TextContent>
+                    <HeadshotContainer>
+                        <StaticImage src="../images/me2.jpg" alt="headshot" aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
+                    </HeadshotContainer>
+                    <DetailContainer>
+                        <SubHeader>
+                            About me
+                        </SubHeader>
+                        <LargerDetail>I'm a Senior full stack engineer at Zocdoc. I work on tools for doctors and practice office staff. Before Zocdoc, I graduated from Vanderbilt University with a B.S. in Computer science and a minor in engineering management.</LargerDetail>
+                    </DetailContainer>
                 </Row>
                 <Row>
                     <DetailContainer>
@@ -27,6 +32,8 @@ export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void;}> = prop
                         <Detail>React + Typescript for UIs</Detail>
                         <Detail>C# / .NET Core for webservers + APIs</Detail>
                         <Detail>Various AWS services for hosting + data</Detail>
+                    </DetailContainer>
+                    <DetailContainer>
                         <SubHeader>
                             Outside of work, you can find me
                         </SubHeader>
@@ -37,7 +44,6 @@ export const AboutMe: React.FC<{ onChangePage: (newPage: Page) => void;}> = prop
                         </Detail>
                         <Detail>Planning my next trip</Detail>
                     </DetailContainer>
-                    <StaticImage src="../images/art.png" alt="headshot" width={285} aspectRatio={0.95}  layout="constrained" imgStyle={{ borderRadius: '80%' }} />
                 </Row>
             </Content>
             <Link onClick={onClickBackToHome}>back to home</Link>
@@ -55,41 +61,63 @@ const ContentContainer = styled.div`
     }
 `;
 
+const HeadshotContainer = styled.div`
+    max-width: 300px;
+    margin: auto;
+`;
+
 const Content = styled.div`
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     text-align: left;
 `;
 
 const Row = styled.div`
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     flex-direction: row;
+    justify-content: space-around;
+    padding-right: 16px;
+    padding-left: 16px;
+
     @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
         flex-direction: column;
+        margin-bottom: 24px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
-`;
-
-const TextContent = styled.div`
-    color: ${colors.bunker};
-    max-width: 45%;
-    margin: auto;
-    font-size: 16px;
 `;
 
 const SubHeader = styled.div`
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    margin-top: 16px;
 `;
 
 const DetailContainer = styled.div`
     margin: auto;
-    max-width: 52%;
+    margin-top: 0px;
+    width: 50%;
+    padding-right: 8px;
+    padding-left: 8px;
+
+    @media(max-width:${VIEWPORT_BREAKPOINTS.SMALL}){
+        margin-bottom: 24px;
+        width: 100%;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 `;
 
+const LargerDetail = styled.p`
+    font-size: 20px;
+    margin-bottom: 16px;
+`;
+
+
 const Detail = styled.p`
-    line-height: 14px;
-    font-size: 14px;
+    line-height: 16px;
+    font-size: 16px;
     margin-bottom: 16px;
 `;
 
