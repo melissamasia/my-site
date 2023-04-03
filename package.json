@@ -22,7 +22,7 @@
     "typescript": "^5.0.2",
     "typography": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19",
-    "ua-parser-js": "^1.0.33"
+    "ua-parser-js": "^1.0.35"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
