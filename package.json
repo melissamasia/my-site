@@ -8,12 +8,12 @@
     "gatsby": "^4.25.4",
     "gatsby-plugin-image": "^2.23.0",
     "gatsby-plugin-manifest": "^4.25.0",
-    "gatsby-plugin-react-svg": "^3.1.0",
+    "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-styled-components": "^5.24.0",
     "gatsby-plugin-typescript": "^4.23.0",
-    "gatsby-plugin-typography": "^4.24.0",
+    "gatsby-plugin-typography": "^4.25.0",
     "gatsby-source-filesystem": "^4.25.0",
-    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-plugin-sharp": "^4.25.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -22,7 +22,7 @@
     "typescript": "^5.0.2",
     "typography": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19",
-    "ua-parser-js": "^1.0.33"
+    "ua-parser-js": "^1.0.35"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
