@@ -20,7 +20,7 @@
     "react-typography": "^0.16.23",
     "styled-components": "^6.0.2",
     "typescript": "^5.1.6",
-    "typography": "^0.16.19",
+    "typography": "^0.16.24",
     "typography-theme-grand-view": "^0.16.19",
     "ua-parser-js": "^1.0.35"
   },
