@@ -6,7 +6,7 @@
   "author": "Melissa Masia",
   "dependencies": {
     "gatsby": "^5.13.1",
-    "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.0",
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-styled-components": "^6.13.0",
