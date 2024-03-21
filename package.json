@@ -19,7 +19,7 @@
     "react-is": "^18.2.0",
     "react-typography": "^0.16.23",
     "styled-components": "^6.1.8",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "typography": "^0.16.24",
     "typography-theme-grand-view": "^0.16.19",
     "ua-parser-js": "^1.0.37"
