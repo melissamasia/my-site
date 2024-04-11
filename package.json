@@ -5,7 +5,7 @@
   "version": "2.0.0",
   "author": "Melissa Masia",
   "dependencies": {
-    "gatsby": "^5.13.3",
+    "gatsby": "^5.13.4",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-react-svg": "^3.3.0",
