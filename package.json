@@ -18,7 +18,7 @@
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "react-typography": "^0.16.23",
-    "styled-components": "^6.1.10",
+    "styled-components": "^6.1.11",
     "typescript": "^5.4.5",
     "typography": "^0.16.24",
     "typography-theme-grand-view": "^0.16.19",
